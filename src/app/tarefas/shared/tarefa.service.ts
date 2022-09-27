@@ -37,11 +37,19 @@ export class TarefaService {
 
   remover(id: number): void {
     let tarefas: Tarefa[] = this.listarTodos(); //por conta de alterar a lista e precisar reatribuir um valor a tarefas, não usa const e sim let
-    tarefas = tarefas.filter(tarefas => tarefa.id !== id); //o filter retorna todas as tarefas so que filtrada de acordo com uma condição passada, nesse caso ira retornar todas com o id diferente mantem na lista
+    tarefas = tarefas.filter(tarefa => tarefa.id !== id); //o filter retorna todas as tarefas so que filtrada de acordo com uma condição passada, nesse caso ira retornar todas com o id diferente mantem na lista
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
 
-  
+  alterarStatus(id: number): void {
+    const tarefas: Tarefa[] = this.listarTodos();
+    tarefas.forEach((obj, index, objs) => {
+      if (id === obj.id){
+        objs[index].concluida =!obj.concluida; //atualiza se esta concluido, caso seja false ele faz o inverso 
+      }
+    });
+    localStorage['tarefas'] = JSON.stringify(tarefas);
+  }
 
 
 }
