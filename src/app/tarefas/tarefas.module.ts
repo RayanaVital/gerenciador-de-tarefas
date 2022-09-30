@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ListarTarefaComponent } from './listar/listar-tarefa.component';
 import { FormsModule } from '@angular/forms';
 import { CadastrarTarefaComponent } from './cadastrar/cadastrar-tarefa.component';
-import { EditarTarefaComponent } from './editar-tarefa/editar-tarefa.component';
+import { EditarTarefaComponent } from './editar/editar-tarefa.component';
 
 
 
@@ -14,7 +14,7 @@ import { EditarTarefaComponent } from './editar-tarefa/editar-tarefa.component';
     ListarTarefaComponent,
     CadastrarTarefaComponent,
     EditarTarefaComponent
-    
+
   ],
   imports: [
     CommonModule,
