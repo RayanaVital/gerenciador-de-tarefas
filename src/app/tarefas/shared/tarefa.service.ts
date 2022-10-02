@@ -45,7 +45,7 @@ export class TarefaService {
     const tarefas: Tarefa[] = this.listarTodos();
     tarefas.forEach((obj, index, objs) => {
       if (id === obj.id){
-        objs[index].concluida =!obj.concluida; //atualiza se esta concluido, caso seja false ele faz o inverso 
+        objs[index].concluida =!obj.concluida; //atualiza se esta concluido, caso seja false ele faz o inverso
       }
     });
     localStorage['tarefas'] = JSON.stringify(tarefas);
